@@ -2,8 +2,10 @@
 package ru.usedesk.knowledgebase_gui.screen.compose.blocks
 
 import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import ru.usedesk.knowledgebase_gui.compose.StoreKeys
 import ru.usedesk.knowledgebase_gui.compose.ViewModelStoreFactory
@@ -17,6 +19,26 @@ import ru.usedesk.knowledgebase_gui.screen.compose.blocks.articles.ContentArticl
 import ru.usedesk.knowledgebase_gui.screen.compose.blocks.categories.ContentCategories
 import ru.usedesk.knowledgebase_gui.screen.compose.blocks.search.ContentSearch
 import ru.usedesk.knowledgebase_gui.screen.compose.blocks.sections.ContentSections
+
+
+@OptIn(ExperimentalAnimationApi::class)
+@Composable
+fun <S> AnimatedContentKt(
+    targetState: S,
+    modifier: Modifier = Modifier,
+    transitionSpec: AnimatedContentScope<S>.() -> ContentTransform = {
+        fadeIn(animationSpec = tween(220, delayMillis = 90)) +
+                scaleIn(initialScale = 0.92f, animationSpec = tween(220, delayMillis = 90)) with
+                fadeOut(animationSpec = tween(90))
+    },
+    contentAlignment: Alignment = Alignment.TopStart,
+    label: String = "AnimatedContent",
+    content: @Composable() (targetState: S) -> Unit
+) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        content(targetState)
+    }
+}
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -58,7 +80,7 @@ internal fun ContentBlocks(
             onSearch = remember { { onEvent(Event.SearchClicked) } }
         )
         Box(modifier = Modifier.fillMaxSize()) {
-            AnimatedContent(
+            AnimatedContentKt(
                 modifier = Modifier.fillMaxSize(),
                 targetState = blocksState.block,
                 transitionSpec = {

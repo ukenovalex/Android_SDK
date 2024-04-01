@@ -1,12 +1,27 @@
 
 package ru.usedesk.knowledgebase_gui.screen.compose
 
-import androidx.compose.animation.*
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentScope
+import androidx.compose.animation.AnimatedVisibilityScope
+import androidx.compose.animation.ContentTransform
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.updateTransition
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.with
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalFocusManager
@@ -22,6 +37,25 @@ import ru.usedesk.knowledgebase_gui.screen.compose.blocks.ContentBlocks
 import ru.usedesk.knowledgebase_gui.screen.compose.incorrect.ContentIncorrect
 import ru.usedesk.knowledgebase_gui.screen.compose.loading.ContentLoading
 import ru.usedesk.knowledgebase_gui.screen.compose.review.ContentReview
+
+@OptIn(ExperimentalAnimationApi::class)
+@Composable
+fun <S> AnimatedContentKt(
+    targetState: S,
+    modifier: Modifier = Modifier,
+    transitionSpec: AnimatedContentScope<S>.() -> ContentTransform = {
+        fadeIn(animationSpec = tween(220, delayMillis = 90)) +
+                scaleIn(initialScale = 0.92f, animationSpec = tween(220, delayMillis = 90)) with
+                fadeOut(animationSpec = tween(90))
+    },
+    contentAlignment: Alignment = Alignment.TopStart,
+    label: String = "AnimatedContent",
+    content: @Composable() (targetState: S) -> Unit
+) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        content(targetState)
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -70,7 +104,7 @@ internal fun ComposeRoot(
                         }),
                     targetState = state.screen !is Screen.Blocks ||
                             state.blocksState.block !is RootViewModel.State.BlocksState.Block.Search,
-                    animationSpec = remember { theme.animationSpec() }
+                    animationSpec = remember { theme.animationSpec() }, label = "usedesk_crossfade"
                 ) { visibleToolbar ->
                     when {
                         visibleToolbar -> CustomToolbar(
@@ -142,7 +176,7 @@ private fun Content(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        AnimatedContent(
+        AnimatedContentKt(
             modifier = Modifier.fillMaxSize(),
             targetState = state.screen,
             transitionSpec = {
@@ -151,7 +185,8 @@ private fun Content(
                     RootViewModel.State.Transition.BACKWARD -> backwardTransitionSpec
                     else -> noneTransitionSpec
                 }
-            }) { screen ->
+            }, label = "usedesc_animation"
+        ) { screen ->
             val getCurrentScreen = remember { { viewModel.modelFlow.value.screen } }
             Box(modifier = Modifier.fillMaxSize()) {
                 when (screen) {

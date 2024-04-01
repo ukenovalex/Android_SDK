@@ -185,10 +185,10 @@ internal class MediaPlayerAdapter(
 
                 if (fullscreen) {
                     fullscreenListener?.getFullscreenLayout()?.addView(pvVideoExoPlayer)
-                    videoBinding.fullscreenButton.setImageResource(R.drawable.exo_ic_fullscreen_exit)
+                    videoBinding.fullscreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_ic_fullscreen_exit)
                 } else {
                     currentMinimizeView?.lVideoMinimized?.addView(pvVideoExoPlayer)
-                    videoBinding.fullscreenButton.setImageResource(R.drawable.exo_ic_fullscreen_enter)
+                    videoBinding.fullscreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_ic_fullscreen_enter)
                 }
                 //Each time need to set player again, otherwise it will not know what happened
                 pvVideoExoPlayer.player = exoPlayer
@@ -327,14 +327,14 @@ internal class MediaPlayerAdapter(
 
     private class VideoExoPlayerBinding(exoPlayerView: PlayerView) {
         val fullscreenButton = exoPlayerView.findViewById<ImageView>(R.id.exo_fullscreen_icon)
-        val controls = exoPlayerView.findViewById<View>(R.id.exo_controller)
+        val controls = exoPlayerView.findViewById<View>(com.google.android.exoplayer2.ui.R.id.exo_controller)
         val lBottomBar = exoPlayerView.findViewById<View>(R.id.l_bottom_bar)
         val pbLoading = exoPlayerView.findViewById<ProgressBar>(R.id.loading)
         val ivDownload = exoPlayerView.findViewById<View>(R.id.iv_download)
     }
 
     private class AudioExoPlayerBinding(exoPlayerView: PlayerView) {
-        val contentFrame = exoPlayerView.findViewById<View>(R.id.exo_content_frame)
+        val contentFrame = exoPlayerView.findViewById<View>(com.google.android.exoplayer2.ui.R.id.exo_content_frame)
     }
 
     private class MinimizeView(

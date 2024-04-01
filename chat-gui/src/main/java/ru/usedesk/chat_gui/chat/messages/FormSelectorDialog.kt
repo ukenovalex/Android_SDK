@@ -40,7 +40,7 @@ internal class FormSelectorDialog private constructor(
         val availableItems = formSelector.list.items.filter {
             it.parentItemsId.isEmpty() || formSelector.parentSelectedId in it.parentItemsId
         }
-        val values = arrayOf(binding.styleValues.getString(R.attr.usedesk_text_1)) +
+        val values = arrayOf(binding.styleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_1)) +
                 availableItems.map(UsedeskForm.Field.List.Item::name)
 
         binding.npPicker.apply {

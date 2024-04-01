@@ -76,7 +76,7 @@ internal class OfflineFormSelectorAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         inflateItem(
             parent,
-            R.layout.usedesk_item_field_checkbox,
+            ru.usedesk.common_gui.R.layout.usedesk_item_field_checkbox,
             itemStyle,
             UsedeskCommonFieldCheckBoxAdapter::Binding
         )

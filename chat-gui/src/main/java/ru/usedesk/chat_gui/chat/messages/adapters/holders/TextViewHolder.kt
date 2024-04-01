@@ -23,10 +23,10 @@ internal class TextViewHolder(
 
     private var onTextChangedListener: (String) -> Unit = {}
 
-    private val backgroundSelector = binding.styleValues.getId(R.attr.usedesk_drawable_1)
-    private val backgroundError = binding.styleValues.getId(R.attr.usedesk_drawable_2)
-    private val textColorEnabled = binding.styleValues.getColor(R.attr.usedesk_text_color_1)
-    private val textColorDisabled = binding.styleValues.getColor(R.attr.usedesk_text_color_2)
+    private val backgroundSelector = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
+    private val backgroundError = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_2)
+    private val textColorEnabled = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_1)
+    private val textColorDisabled = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_2)
 
     init {
         binding.etText.addTextChangedListener {

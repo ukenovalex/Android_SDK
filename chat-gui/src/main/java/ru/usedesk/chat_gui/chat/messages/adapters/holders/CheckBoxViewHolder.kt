@@ -20,12 +20,12 @@ internal class CheckBoxViewHolder(
     private val onEvent: (Event) -> Unit
 ) : BaseViewHolder(binding.rootView) {
 
-    private val checkedDrawable = binding.styleValues.getId(R.attr.usedesk_drawable_1)
-    private val uncheckedDrawable = binding.styleValues.getId(R.attr.usedesk_drawable_2)
-    private val checkedDisabledDrawable = binding.styleValues.getId(R.attr.usedesk_drawable_3)
-    private val uncheckedErrorDrawable = binding.styleValues.getId(R.attr.usedesk_drawable_4)
-    private val textColorEnabled = binding.styleValues.getColor(R.attr.usedesk_text_color_1)
-    private val textColorDisabled = binding.styleValues.getColor(R.attr.usedesk_text_color_2)
+    private val checkedDrawable = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
+    private val uncheckedDrawable = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_2)
+    private val checkedDisabledDrawable = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_3)
+    private val uncheckedErrorDrawable = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_4)
+    private val textColorEnabled = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_1)
+    private val textColorDisabled = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_2)
 
     override fun bind(
         messageId: Long,

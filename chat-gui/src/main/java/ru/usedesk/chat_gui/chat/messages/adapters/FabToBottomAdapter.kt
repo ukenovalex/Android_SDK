@@ -32,7 +32,7 @@ internal class FabToBottomAdapter(
         )
         animationIn = AnimationUtils.loadAnimation(
             fabToBottom.context,
-            fabStyleValues.getId(R.attr.usedesk_animation_in)
+            fabStyleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_animation_in)
         ).apply {
             setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation?) {
@@ -48,7 +48,7 @@ internal class FabToBottomAdapter(
         }
         animationOut = AnimationUtils.loadAnimation(
             fabToBottom.context,
-            fabStyleValues.getId(R.attr.usedesk_animation_out)
+            fabStyleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_animation_out)
         ).apply {
             setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation?) {

@@ -90,8 +90,8 @@ internal class MessagesAdapter(
 
     private val dateStyleValues = dateBinding.styleValues
         .getStyleValues(R.attr.usedesk_chat_message_date_text)
-    private val todayText = dateStyleValues.getString(R.attr.usedesk_text_1)
-    private val yesterdayText = dateStyleValues.getString(R.attr.usedesk_text_2)
+    private val todayText = dateStyleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_1)
+    private val yesterdayText = dateStyleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_2)
 
     private val timeFormatText = timeFormat.format(Calendar.getInstance().apply {
         set(Calendar.YEAR, 9999)
@@ -452,8 +452,8 @@ internal class MessagesAdapter(
         private val isClient: Boolean
     ) : BaseViewHolder(itemView) {
 
-        private val sendingDrawable: Drawable? = getDrawableIcon(R.attr.usedesk_drawable_1)
-        private val successfullyDrawable: Drawable? = getDrawableIcon(R.attr.usedesk_drawable_2)
+        private val sendingDrawable: Drawable? = getDrawableIcon(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
+        private val successfullyDrawable: Drawable? = getDrawableIcon(ru.usedesk.common_gui.R.attr.usedesk_drawable_2)
 
         private fun getDrawableIcon(attrId: Int): Drawable? {
             val id = styleValues.getStyleValues(R.attr.usedesk_chat_message_time_text)
@@ -518,7 +518,7 @@ internal class MessagesAdapter(
             val invisibleState: Int
 
             agentBinding.styleValues.getStyleValues(R.attr.usedesk_chat_message_avatar_image).run {
-                avatarImageId = getId(R.attr.usedesk_drawable_1)
+                avatarImageId = getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
                 val visibility = listOf(View.VISIBLE, View.INVISIBLE, View.GONE)
                     .getOrNull(getInt(android.R.attr.visibility))
                 when (visibility) {
@@ -657,12 +657,12 @@ internal class MessagesAdapter(
             binding.tvExtension.text = name.substringAfterLast('.')
             val textColorId = when {
                 chatArgs.rejectedFileExtensions.any(name::endsWith) -> {
-                    binding.tvFileSize.text = textSizeStyleValues.getString(R.attr.usedesk_text_1)
-                    R.attr.usedesk_text_color_2
+                    binding.tvFileSize.text = textSizeStyleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_1)
+                    ru.usedesk.common_gui.R.attr.usedesk_text_color_2
                 }
                 else -> {
                     binding.tvFileSize.text = messageFile.file.size
-                    R.attr.usedesk_text_color_1
+                    ru.usedesk.common_gui.R.attr.usedesk_text_color_1
                 }
             }
             binding.tvFileSize.setTextColor(textSizeStyleValues.getColor(textColorId))
@@ -680,7 +680,7 @@ internal class MessagesAdapter(
 
         private val loadingImageId = binding.styleValues
             .getStyleValues(R.attr.usedesk_chat_message_image_preview_image)
-            .getId(R.attr.usedesk_drawable_1)
+            .getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
 
         override fun bind(chatItem: ChatItem) {
             super.bind(chatItem)
@@ -1012,7 +1012,7 @@ internal class MessagesAdapter(
 
         private val thanksText = binding.styleValues
             .getStyleValues(R.attr.usedesk_chat_message_text_message_text)
-            .getString(R.attr.usedesk_text_1)
+            .getString(ru.usedesk.common_gui.R.attr.usedesk_text_1)
 
         private val formAdapter = MessageFormAdapter(
             binding.content.rvItems,
@@ -1045,10 +1045,10 @@ internal class MessagesAdapter(
             val ivLike = binding.content.ivLike
             val ivDislike = binding.content.ivDislike
 
-            val goodImage = goodStyleValues.getId(R.attr.usedesk_drawable_1)
-            val goodColoredImage = goodStyleValues.getId(R.attr.usedesk_drawable_2)
-            val badImage = badStyleValues.getId(R.attr.usedesk_drawable_1)
-            val badColoredImage = badStyleValues.getId(R.attr.usedesk_drawable_2)
+            val goodImage = goodStyleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
+            val goodColoredImage = goodStyleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_2)
+            val badImage = badStyleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
+            val badColoredImage = badStyleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_2)
             when {
                 messageAgentText.feedback != null -> {
                     binding.content.lFeedback.visibility = View.VISIBLE

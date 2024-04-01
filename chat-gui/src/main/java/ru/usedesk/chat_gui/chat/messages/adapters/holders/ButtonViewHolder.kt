@@ -21,13 +21,13 @@ internal class ButtonViewHolder(
     private val onEvent: (Event) -> Unit
 ) : BaseViewHolder(binding.rootView) {
 
-    private val applyTitleDefault = binding.styleValues.getString(R.attr.usedesk_text_1)
-    private val applyTitleSuccsessfull = binding.styleValues.getString(R.attr.usedesk_text_2)
-    private val applyTitleFailed = binding.styleValues.getString(R.attr.usedesk_text_3)
-    private val backgroundDefault = binding.styleValues.getColor(R.attr.usedesk_background_color_1)
+    private val applyTitleDefault = binding.styleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_1)
+    private val applyTitleSuccsessfull = binding.styleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_2)
+    private val applyTitleFailed = binding.styleValues.getString(ru.usedesk.common_gui.R.attr.usedesk_text_3)
+    private val backgroundDefault = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_background_color_1)
     private val backgroundSuccsessfull =
-        binding.styleValues.getColor(R.attr.usedesk_background_color_2)
-    private val backgroundFailed = binding.styleValues.getColor(R.attr.usedesk_background_color_3)
+        binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_background_color_2)
+    private val backgroundFailed = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_background_color_3)
 
     init {
         binding.pbLoading.visibility = View.INVISIBLE

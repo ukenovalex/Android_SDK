@@ -20,10 +20,10 @@ internal class ItemListViewHolder(
     private val onEvent: (Event) -> Unit
 ) : BaseViewHolder(binding.rootView) {
 
-    private val textColorEnabled = binding.styleValues.getColor(R.attr.usedesk_text_color_1)
-    private val textColorDisabled = binding.styleValues.getColor(R.attr.usedesk_text_color_2)
-    private val backgroundSimple = binding.styleValues.getId(R.attr.usedesk_drawable_1)
-    private val backgroundError = binding.styleValues.getId(R.attr.usedesk_drawable_2)
+    private val textColorEnabled = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_1)
+    private val textColorDisabled = binding.styleValues.getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_2)
+    private val backgroundSimple = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_1)
+    private val backgroundError = binding.styleValues.getId(ru.usedesk.common_gui.R.attr.usedesk_drawable_2)
 
     override fun bind(
         messageId: Long,

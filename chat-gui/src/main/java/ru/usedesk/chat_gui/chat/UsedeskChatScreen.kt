@@ -137,8 +137,8 @@ class UsedeskChatScreen : UsedeskFragment() {
             when (destination?.id) {
                 R.id.dest_loadingPage,
                 R.id.dest_messagesPage -> styleValues
-                    .getStyleValues(R.attr.usedesk_common_toolbar)
-                    .getStyleValues(R.attr.usedesk_common_toolbar_title_text)
+                    .getStyleValues(ru.usedesk.common_gui.R.attr.usedesk_common_toolbar)
+                    .getStyleValues(ru.usedesk.common_gui.R.attr.usedesk_common_toolbar_title_text)
                     .getString(android.R.attr.text)
                 R.id.dest_offlineFormPage -> model.offlineFormSettings?.callbackTitle
                 R.id.dest_offlineFormSelectorPage -> model.offlineFormSettings?.topicsTitle

@@ -38,7 +38,7 @@ class UsedeskKnowledgeBaseTheme(
         @StringRes val searchIsEmpty: Int = R.string.usedesk_search_fail,
         @StringRes val articleRating: Int = R.string.usedesk_rating_question,
         @StringRes val articleReviewTitle: Int = R.string.usedesk_article_review_title,
-        @StringRes val articleReviewSend: Int = R.string.usedesk_send,
+        @StringRes val articleReviewSend: Int = ru.usedesk.common_gui.R.string.usedesk_send,
         @StringRes val articleReviewYes: Int = R.string.usedesk_rating_yes,
         @StringRes val articleReviewNo: Int = R.string.usedesk_rating_no,
         @StringRes val articleRatingThanks: Int = R.string.usedesk_rating_thanks,
@@ -95,20 +95,20 @@ class UsedeskKnowledgeBaseTheme(
 
     class Fonts(
         val sfProDisplay: FontFamily = FontFamily(
-            Font(R.font.sf_pro_display_regular),
-            Font(R.font.sf_pro_display_medium, FontWeight.Medium),
-            Font(R.font.sf_pro_display_semibold, FontWeight.SemiBold),
-            Font(R.font.sf_pro_display_semibold, FontWeight.Bold)
+            Font(ru.usedesk.common_gui.R.font.sf_pro_display_regular),
+            Font(ru.usedesk.common_gui.R.font.sf_pro_display_medium, FontWeight.Medium),
+            Font(ru.usedesk.common_gui.R.font.sf_pro_display_semibold, FontWeight.SemiBold),
+            Font(ru.usedesk.common_gui.R.font.sf_pro_display_semibold, FontWeight.Bold)
         ),
         val sfUiDisplay: FontFamily = FontFamily(
-            Font(R.font.sf_ui_display_regular),
-            Font(R.font.sf_ui_display_medium, FontWeight.Medium),
-            Font(R.font.sf_ui_display_semibold, FontWeight.SemiBold),
-            Font(R.font.sf_ui_display_semibold, FontWeight.Bold)
+            Font(ru.usedesk.common_gui.R.font.sf_ui_display_regular),
+            Font(ru.usedesk.common_gui.R.font.sf_ui_display_medium, FontWeight.Medium),
+            Font(ru.usedesk.common_gui.R.font.sf_ui_display_semibold, FontWeight.SemiBold),
+            Font(ru.usedesk.common_gui.R.font.sf_ui_display_semibold, FontWeight.Bold)
         ),
         val roboto: FontFamily = FontFamily(
-            Font(R.font.roboto_regular),
-            Font(R.font.roboto_medium, FontWeight.Medium)
+            Font(ru.usedesk.common_gui.R.font.roboto_regular),
+            Font(ru.usedesk.common_gui.R.font.roboto_medium, FontWeight.Medium)
         )
     )
 

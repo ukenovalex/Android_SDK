@@ -74,12 +74,12 @@ class MainActivity : AppCompatActivity(),
         val materialComponents = viewModel.modelFlow.value.configuration.common.materialComponents
         when {
             materialComponents -> mapOf(
-                R.style.Usedesk_Chat_Screen_Messages_Page to R.style.Chat_Screen_Messages_Page_MaterialComponents,
-                R.style.Usedesk_Chat_Screen_Offline_Form_Page to R.style.Chat_Screen_Offline_Form_Page_MaterialComponents
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Screen_Messages_Page to ru.usedesk.chat_gui.R.style.Chat_Screen_Messages_Page_MaterialComponents,
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Screen_Offline_Form_Page to ru.usedesk.chat_gui.R.style.Chat_Screen_Offline_Form_Page_MaterialComponents
             )
             else -> listOf(
-                R.style.Usedesk_Chat_Screen_Messages_Page,
-                R.style.Usedesk_Chat_Screen_Offline_Form_Page
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Screen_Messages_Page,
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Screen_Offline_Form_Page
             ).associateWith { it }
         }.forEach {
             UsedeskResourceManager.replaceResourceId(it.key, it.value)
@@ -161,7 +161,7 @@ class MainActivity : AppCompatActivity(),
                 downloadFile()
             } else {
                 val snackbarStyleId = UsedeskResourceManager.getResourceId(
-                    R.style.Usedesk_Common_No_Permission_Snackbar
+                    ru.usedesk.common_gui.R.style.Usedesk_Common_No_Permission_Snackbar
                 )
                 UsedeskResourceManager.StyleValues(
                     this,
@@ -169,11 +169,11 @@ class MainActivity : AppCompatActivity(),
                 ).apply {
                     UsedeskSnackbar.create(
                         binding.root,
-                        getColor(R.attr.usedesk_background_color_1),
-                        getString(R.attr.usedesk_text_1),
-                        getColor(R.attr.usedesk_text_color_1),
-                        getString(R.attr.usedesk_text_2),
-                        getColor(R.attr.usedesk_text_color_2)
+                        getColor(ru.usedesk.common_gui.R.attr.usedesk_background_color_1),
+                        getString(ru.usedesk.common_gui.R.attr.usedesk_text_1),
+                        getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_1),
+                        getString(ru.usedesk.common_gui.R.attr.usedesk_text_2),
+                        getColor(ru.usedesk.common_gui.R.attr.usedesk_text_color_2)
                     ).show()
                 }
             }
@@ -303,13 +303,13 @@ class MainActivity : AppCompatActivity(),
         val chatConfiguration = configuration.toChatConfiguration()
         if (configuration.chat.adaptiveTimePadding) {
             mapOf(
-                R.style.Usedesk_Chat_Message_Text_Agent to R.style.Custom_Chat_Message_Text_Agent,
-                R.style.Usedesk_Chat_Message_Text_Client to R.style.Custom_Chat_Message_Text_Client
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Message_Text_Agent to R.style.Custom_Chat_Message_Text_Agent,
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Message_Text_Client to R.style.Custom_Chat_Message_Text_Client
             )
         } else {
             mapOf(
-                R.style.Usedesk_Chat_Message_Text_Agent to R.style.Usedesk_Chat_Message_Text_Agent,
-                R.style.Usedesk_Chat_Message_Text_Client to R.style.Usedesk_Chat_Message_Text_Client
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Message_Text_Agent to ru.usedesk.chat_gui.R.style.Usedesk_Chat_Message_Text_Agent,
+                ru.usedesk.chat_gui.R.style.Usedesk_Chat_Message_Text_Client to ru.usedesk.chat_gui.R.style.Usedesk_Chat_Message_Text_Client
             )
         }.forEach {
             UsedeskResourceManager.replaceResourceId(it.key, it.value)

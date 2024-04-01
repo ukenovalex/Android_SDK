@@ -21,7 +21,7 @@ class UsedeskSnackbar private constructor() {
             actionColor: Int
         ): Snackbar {
             return create(parentView, backgroundColor, messageText, messageColor).apply {
-                view.findViewById<TextView>(R.id.snackbar_text).apply {
+                view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text).apply {
                     gravity = Gravity.START
                 }
                 setAction(actionText) {
@@ -47,7 +47,7 @@ class UsedeskSnackbar private constructor() {
             return Snackbar.make(parentView, messageText, Snackbar.LENGTH_LONG).apply {
                 view.setBackgroundColor(backgroundColor)
                 setTextColor(messageColor)
-                view.findViewById<TextView>(R.id.snackbar_text).apply {
+                view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text).apply {
                     gravity = Gravity.CENTER_HORIZONTAL
                 }
             }

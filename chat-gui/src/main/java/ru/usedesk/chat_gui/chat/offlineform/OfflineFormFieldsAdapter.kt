@@ -91,18 +91,18 @@ internal class OfflineFormFieldsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
-        R.layout.usedesk_item_field_text -> TextViewHolder(
+        ru.usedesk.common_gui.R.layout.usedesk_item_field_text -> TextViewHolder(
             inflateItem(
                 parent,
-                R.layout.usedesk_item_field_text,
+                ru.usedesk.common_gui.R.layout.usedesk_item_field_text,
                 textFieldStyle,
                 UsedeskCommonFieldTextAdapter::Binding
             )
         )
-        R.layout.usedesk_item_field_list -> ListViewHolder(
+        ru.usedesk.common_gui.R.layout.usedesk_item_field_list -> ListViewHolder(
             inflateItem(
                 parent,
-                R.layout.usedesk_item_field_list,
+                ru.usedesk.common_gui.R.layout.usedesk_item_field_list,
                 listFieldStyle,
                 UsedeskCommonFieldListAdapter::Binding
             )
@@ -121,8 +121,8 @@ internal class OfflineFormFieldsAdapter(
     override fun getItemCount() = items.size
 
     override fun getItemViewType(position: Int): Int = when (items[position]) {
-        is OfflineFormItem.List -> R.layout.usedesk_item_field_list
-        is OfflineFormItem.Text -> R.layout.usedesk_item_field_text
+        is OfflineFormItem.List -> ru.usedesk.common_gui.R.layout.usedesk_item_field_list
+        is OfflineFormItem.Text -> ru.usedesk.common_gui.R.layout.usedesk_item_field_text
     }
 
     inner class TextViewHolder(
